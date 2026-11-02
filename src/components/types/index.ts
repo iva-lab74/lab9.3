@@ -30,3 +30,4 @@ export interface TaskFilterProps {
     priority?: 'low' | 'medium' | 'high';
   }) => void;
 }
+export type Filter = "all" | TaskStatus;
