@@ -22,16 +22,12 @@ export default function App() {
     setTasks(tasks.filter((t) => t.id !== id));
   }
 
-  const visibleTasks = tasks.filter(
-    (t) =>
-      (!filters.status || t.status === filters.status) &&
-      
-  );
+ 
 
   return (
     <main>
       <h1>Tasks</h1>
-      <TaskList tasks={visibleTasks} onStatusChange={changeStatus} onDelete={deleteTask} />
+      <TaskList tasks={tasks} onStatusChange={changeStatus} onDelete={deleteTask} />
     </main>
   );
 }

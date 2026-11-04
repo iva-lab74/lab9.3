@@ -1,15 +1,15 @@
 import type { Task, TaskListProps } from "../types";
-import type { TaskItemProps } from "../TaskItem/TaskItem";
+import  TaskItem   from "../TaskItem/TaskItem";
 
 //pulling the props we only need / key prop and passing props down.
-export default function TaskList({ task, onStatusChange, onDelete }: TaskItemProps) {
-    if (task.length === 0) {
+export default function TaskList({ tasks, onStatusChange, onDelete }: TaskListProps) {
+    if (tasks.length === 0) {
         return <p> No tasks entered.</p>;
     }
 
     return (
         <ul>
-            {task.map((task) => (<TaskItemProps key={task.is} task={task} onStatusChnage={onStatusChnage} onDelete={onDelete} />
+            {tasks.map((task) => (<TaskItem key={task.id} task={task} onStatusChange={onStatusChange} onDelete={onDelete} />
             ))}
         </ul>
     );
